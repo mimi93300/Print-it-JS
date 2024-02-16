@@ -5,8 +5,7 @@ const slides = [
   },
   {
     image: "slide2.jpg",
-    tagLine:
-      "Tirages haute définition grand format <span>pour vos bureaux et events</span>",
+    tagLine: "Tirages haute définition grand format <span>pour vos bureaux et events</span>",
   },
   {
     image: "slide3.jpg",
@@ -16,7 +15,7 @@ const slides = [
     image: "slide4.png",
     tagLine: "Autocollants <span>avec découpe laser sur mesure</span>",
   },
-];
+ ];
 
 //Recuperation de mes flèches à partir de mon HTML//
 //récuperation de mes slides//
@@ -33,10 +32,9 @@ let currentSlideIndex = 0;
 const dotsContainer = document.querySelector(".dots");
 
 //Ajout des bullet point dynamique//
-slides.forEach((slides) => {
-  slides.bulletPoint = document.createElement("span");
-  slides.bulletPoint.classList.add("dot");
-  dotsContainer.appendChild(slides.bulletPoint);
+slides.forEach((slide) => {
+  slide.bullet = document.createElement("span");
+  slide.bulletPoint.classList.add("dot  dotsContainer.appendChild(slide.bulletPoint);
 });
 
 slides[0].bulletPoint.classList.add("dot_selected");
@@ -48,6 +46,7 @@ leftArrow.addEventListener("click", function () {
 	currentSlideIndex--;
 	if (currentSlideIndex == -1) {
 	  currentSlideIndex = slides.length - 1;	
+    console.log("J'ai cliqué sur la flèche gauche");
 	}
   //Mise à jour de l'image et du tagline selon la diapositive//
 	imageSlide.src =
@@ -61,6 +60,7 @@ rightArrow.addEventListener("click", function () {
   currentSlideIndex++;
   if (currentSlideIndex == slides.length) {
 	currentSlideIndex = 0	
+  console.log("Jai cliqué sur la flèche droite");
   }
   imageSlide.src =
     "./assets/images/slideshow/" + slides[currentSlideIndex].image;
