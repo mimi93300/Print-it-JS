@@ -18,7 +18,7 @@ const slides = [
 ];
 
 //Recuperation de mes flèches à partir de mon HTML//
-//récuperation de mes slides//
+//récuperation de mes slides, légendes et source//
 
 const leftArrow = document.querySelector(".arrow_left");
 const rightArrow = document.querySelector(".arrow_right");
@@ -62,8 +62,8 @@ function initDots() {
   allDots[currentSlideIndex].classList.add("dot_selected");
 
 }
-//Attachement des eventlistener aux flèches//
 
+//Attachement des eventlistener aux flèches//
 
 function prevSlide() {
   leftArrow.addEventListener("click", function () {
