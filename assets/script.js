@@ -20,7 +20,7 @@ const slides = [
 //Recuperation de mes flèches à partir de mon HTML//
 //récuperation de mes slides, légendes et source//
 
-const leftArrow = document.querySelector(".arrow_left");
+const leftArrow = document.querySelector(".arrow_left"); 
 const rightArrow = document.querySelector(".arrow_right");
 
 const imageSlide = document.querySelector(".banner-img");
@@ -74,12 +74,14 @@ function prevSlide() {
     currentSlideIndex--;
     if (currentSlideIndex == -1) {
       currentSlideIndex = slides.length - 1;
-      console.log("J'ai cliqué sur la flèche gauche");
+      
     }
     //Mise à jour de l'image et du tagline selon la diapositive//
     imageSlide.src = baseUrl + slides[currentSlideIndex].image;
     tagLine.innerHTML = slides[currentSlideIndex].tagLine;
     allDots[currentSlideIndex].classList.add("dot_selected");
+
+    console.log("J'ai cliqué sur la flèche gauche");
   });
 
 }
@@ -92,10 +94,12 @@ function nextSlide() {
     currentSlideIndex++;
     if (currentSlideIndex == slides.length) {
       currentSlideIndex = 0
-      console.log("Jai cliqué sur la flèche droite");
+     
     }
     imageSlide.src = baseUrl + slides[currentSlideIndex].image;
     tagLine.innerHTML = slides[currentSlideIndex].tagLine;
     allDots[currentSlideIndex].classList.add("dot_selected");
+
+    console.log("Jai cliqué sur la flèche droite");
   });
 }
